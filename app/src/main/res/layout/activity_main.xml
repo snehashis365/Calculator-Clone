@@ -34,7 +34,8 @@
             android:fontFamily="@font/comfortaa"
             android:scrollHorizontally="false"
             android:textAlignment="textEnd"
-            android:textSize="60sp" />
+            android:textIsSelectable="true"
+            android:textSize="54sp" />
 
         <TextView
             android:id="@+id/outputField"
@@ -43,7 +44,8 @@
             android:fontFamily="@font/comfortaa_bold"
             android:textAlignment="textEnd"
             android:textColor="#795B5B5B"
-            android:textSize="48sp" />
+            android:textIsSelectable="false"
+            android:textSize="42sp" />
     </LinearLayout>
 
     <LinearLayout
@@ -191,7 +193,7 @@
             </LinearLayout>
 
             <LinearLayout
-                android:id="@+id/row4"
+                android:id="@+id/row0"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="horizontal">
@@ -238,8 +240,8 @@
 
         <LinearLayout
             android:id="@+id/divider"
-            android:layout_width="0.5dp"
-            android:layout_height="320sp"
+            android:layout_width="0.75dp"
+            android:layout_height="333sp"
             android:layout_gravity="center"
             android:background="@color/purple_500"
             android:orientation="vertical"></LinearLayout>
@@ -279,6 +281,7 @@
                     android:clickable="true"
                     android:hapticFeedbackEnabled="true"
                     android:paddingTop="20sp"
+                    android:paddingRight="8sp"
                     android:paddingBottom="20sp"
                     app:srcCompat="@drawable/ic_backspace" />
             </LinearLayout>
@@ -311,6 +314,7 @@
                     android:fontFamily="@font/comfortaa_light"
                     android:gravity="center"
                     android:hapticFeedbackEnabled="true"
+                    android:paddingRight="8sp"
                     android:text="("
                     android:textColor="@color/purple_500"
                     android:textSize="28sp" />
@@ -344,6 +348,7 @@
                     android:fontFamily="@font/comfortaa_light"
                     android:gravity="center"
                     android:hapticFeedbackEnabled="true"
+                    android:paddingRight="8sp"
                     android:text=")"
                     android:textColor="@color/purple_500"
                     android:textSize="28sp" />
@@ -378,6 +383,7 @@
                     android:fontFamily="@font/comfortaa_light"
                     android:gravity="center"
                     android:hapticFeedbackEnabled="true"
+                    android:paddingRight="8sp"
                     android:text="="
                     android:textColor="@color/purple_500"
                     android:textSize="32sp" />

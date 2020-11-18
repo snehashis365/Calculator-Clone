@@ -1,5 +1,6 @@
 package com.snehashis.calculator
 
+import android.content.DialogInterface
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.Editable
@@ -7,6 +8,7 @@ import android.text.TextWatcher
 import android.util.Log
 import android.view.View
 import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 import com.github.keelar.exprk.Expressions
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -118,7 +120,15 @@ class MainActivity : AppCompatActivity() {
             numPressed('^')
         }
         btn_info.setOnClickListener {
-            Toast.makeText(this, "Info Coming Soon!!", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "Hey there have a nice Day", Toast.LENGTH_LONG).show()
+            val about = AlertDialog.Builder(this)
+            about.setTitle("About This App")
+            val customView = layoutInflater.inflate(R.layout.dialog_about,null)
+            about.setView(customView)
+            about.setPositiveButton("Ok", DialogInterface.OnClickListener { _, _ ->
+                Toast.makeText(this, "...\ud83c\udfb2...", Toast.LENGTH_SHORT).show()
+            })
+            about.show()
         }
     }
     private fun isOperator(op: Char): Boolean = (op == '+' || op == '-' || op == '*' || op == '/' || op == '^' || op == '%')
