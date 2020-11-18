@@ -1,0 +1,388 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:animateLayoutChanges="true"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <ImageView
+        android:id="@+id/btn_info"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:clickable="true"
+        android:hapticFeedbackEnabled="true"
+        android:padding="8dp"
+        app:srcCompat="@drawable/ic_info" />
+
+    <LinearLayout
+        android:id="@+id/display"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="2"
+        android:animateLayoutChanges="true"
+        android:orientation="vertical"
+        android:padding="12dp">
+
+        <TextView
+            android:id="@+id/inputField"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/comfortaa"
+            android:scrollHorizontally="false"
+            android:textAlignment="textEnd"
+            android:textSize="60sp" />
+
+        <TextView
+            android:id="@+id/outputField"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/comfortaa_bold"
+            android:textAlignment="textEnd"
+            android:textColor="#795B5B5B"
+            android:textSize="48sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/inputPad"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0"
+        android:orientation="horizontal"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp">
+
+        <LinearLayout
+            android:id="@+id/numPad"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/row3"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/btn_7"
+                    android:layout_width="90sp"
+                    android:layout_height="90sp"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:clickable="true"
+                    android:fontFamily="@font/comfortaa_light"
+                    android:gravity="center"
+                    android:hapticFeedbackEnabled="true"
+                    android:text="7"
+                    android:textSize="32sp" />
+
+                <TextView
+                    android:id="@+id/btn_8"
+                    android:layout_width="90sp"
+                    android:layout_height="90sp"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:clickable="true"
+                    android:fontFamily="@font/comfortaa_light"
+                    android:gravity="center"
+                    android:hapticFeedbackEnabled="true"
+                    android:text="8"
+                    android:textSize="32sp" />
+
+                <TextView
+                    android:id="@+id/btn_9"
+                    android:layout_width="80sp"
+                    android:layout_height="90sp"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:clickable="true"
+                    android:fontFamily="@font/comfortaa_light"
+                    android:gravity="center"
+                    android:hapticFeedbackEnabled="true"
+                    android:text="9"
+                    android:textSize="32sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/row2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/btn_4"
+                    android:layout_width="90sp"
+                    android:layout_height="90sp"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:clickable="true"
+                    android:fontFamily="@font/comfortaa_light"
+                    android:gravity="center"
+                    android:hapticFeedbackEnabled="true"
+                    android:text="4"
+                    android:textSize="32sp" />
+
+                <TextView
+                    android:id="@+id/btn_5"
+                    android:layout_width="90sp"
+                    android:layout_height="90sp"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:clickable="true"
+                    android:fontFamily="@font/comfortaa_light"
+                    android:gravity="center"
+                    android:hapticFeedbackEnabled="true"
+                    android:text="5"
+                    android:textSize="32sp" />
+
+                <TextView
+                    android:id="@+id/btn_6"
+                    android:layout_width="80sp"
+                    android:layout_height="90sp"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:clickable="true"
+                    android:fontFamily="@font/comfortaa_light"
+                    android:gravity="center"
+                    android:hapticFeedbackEnabled="true"
+                    android:text="6"
+                    android:textSize="32sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/row1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/btn_1"
+                    android:layout_width="90sp"
+                    android:layout_height="90sp"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:clickable="true"
+                    android:fontFamily="@font/comfortaa_light"
+                    android:gravity="center"
+                    android:hapticFeedbackEnabled="true"
+                    android:text="1"
+                    android:textSize="32sp" />
+
+                <TextView
+                    android:id="@+id/btn_2"
+                    android:layout_width="90sp"
+                    android:layout_height="90sp"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:clickable="true"
+                    android:fontFamily="@font/comfortaa_light"
+                    android:gravity="center"
+                    android:hapticFeedbackEnabled="true"
+                    android:text="2"
+                    android:textSize="32sp" />
+
+                <TextView
+                    android:id="@+id/btn_3"
+                    android:layout_width="80sp"
+                    android:layout_height="90sp"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:clickable="true"
+                    android:fontFamily="@font/comfortaa_light"
+                    android:gravity="center"
+                    android:hapticFeedbackEnabled="true"
+                    android:text="3"
+                    android:textSize="32sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/row4"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/btn_0"
+                    android:layout_width="90sp"
+                    android:layout_height="90sp"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:clickable="true"
+                    android:fontFamily="@font/comfortaa_light"
+                    android:gravity="center"
+                    android:hapticFeedbackEnabled="true"
+                    android:text="0"
+                    android:textSize="32sp" />
+
+                <TextView
+                    android:id="@+id/btn_dec"
+                    android:layout_width="90sp"
+                    android:layout_height="90sp"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:clickable="true"
+                    android:fontFamily="@font/comfortaa_light"
+                    android:gravity="center"
+                    android:hapticFeedbackEnabled="true"
+                    android:text="."
+                    android:textSize="32sp" />
+
+                <TextView
+                    android:id="@+id/btn_expo"
+                    android:layout_width="80sp"
+                    android:layout_height="90sp"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:clickable="true"
+                    android:fontFamily="@font/comfortaa_light"
+                    android:gravity="center"
+                    android:hapticFeedbackEnabled="true"
+                    android:text="^"
+                    android:textColor="@color/purple_500"
+                    android:textSize="28sp" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/divider"
+            android:layout_width="0.5dp"
+            android:layout_height="320sp"
+            android:layout_gravity="center"
+            android:background="@color/purple_500"
+            android:orientation="vertical"></LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/actionPad"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/row5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/btn_div"
+                    android:layout_width="70sp"
+                    android:layout_height="90sp"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:clickable="true"
+                    android:fontFamily="@font/comfortaa_light"
+                    android:gravity="center"
+                    android:hapticFeedbackEnabled="true"
+                    android:text="÷"
+                    android:textColor="@color/purple_500"
+                    android:textSize="32sp" />
+
+                <ImageView
+                    android:id="@+id/btn_del"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:clickable="true"
+                    android:hapticFeedbackEnabled="true"
+                    android:paddingTop="20sp"
+                    android:paddingBottom="20sp"
+                    app:srcCompat="@drawable/ic_backspace" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/row6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/btn_mul"
+                    android:layout_width="70sp"
+                    android:layout_height="90sp"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:clickable="true"
+                    android:fontFamily="@font/comfortaa_light"
+                    android:gravity="center"
+                    android:hapticFeedbackEnabled="true"
+                    android:text="×"
+                    android:textColor="@color/purple_500"
+                    android:textSize="32sp" />
+
+                <TextView
+                    android:id="@+id/btn_lb"
+                    android:layout_width="match_parent"
+                    android:layout_height="90sp"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:clickable="true"
+                    android:fontFamily="@font/comfortaa_light"
+                    android:gravity="center"
+                    android:hapticFeedbackEnabled="true"
+                    android:text="("
+                    android:textColor="@color/purple_500"
+                    android:textSize="28sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/row7"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/btn_sub"
+                    android:layout_width="70sp"
+                    android:layout_height="90sp"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:clickable="true"
+                    android:fontFamily="@font/comfortaa_light"
+                    android:gravity="center"
+                    android:hapticFeedbackEnabled="true"
+                    android:text="-"
+                    android:textColor="@color/purple_500"
+                    android:textSize="32sp" />
+
+                <TextView
+                    android:id="@+id/btn_rb"
+                    android:layout_width="match_parent"
+                    android:layout_height="90sp"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:clickable="true"
+                    android:fontFamily="@font/comfortaa_light"
+                    android:gravity="center"
+                    android:hapticFeedbackEnabled="true"
+                    android:text=")"
+                    android:textColor="@color/purple_500"
+                    android:textSize="28sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/row8"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/btn_add"
+                    android:layout_width="70sp"
+                    android:layout_height="90sp"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:clickable="true"
+                    android:fontFamily="@font/comfortaa_light"
+                    android:gravity="center"
+                    android:hapticFeedbackEnabled="true"
+                    android:text="+"
+                    android:textColor="@color/purple_500"
+                    android:textSize="32sp" />
+
+                <TextView
+                    android:id="@+id/btn_eq"
+                    android:layout_width="match_parent"
+                    android:layout_height="90sp"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:clickable="true"
+                    android:fontFamily="@font/comfortaa_light"
+                    android:gravity="center"
+                    android:hapticFeedbackEnabled="true"
+                    android:text="="
+                    android:textColor="@color/purple_500"
+                    android:textSize="32sp" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>
