@@ -6,11 +6,14 @@ import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
 import android.util.Log
+import android.view.HapticFeedbackConstants
 import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import com.github.keelar.exprk.Expressions
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.dialog_about.view.*
+import kotlin.random.Random
 
 var isDecPressed : Boolean = false
 var isEqPressed : Boolean = false
@@ -122,14 +125,30 @@ class MainActivity : AppCompatActivity() {
             numPressed('^')
         }
         btn_info.setOnClickListener {
-            Toast.makeText(this, "Hey there have a nice Day", Toast.LENGTH_LONG).show()
             val about = AlertDialog.Builder(this)
             about.setTitle("About This App")
             val customView = layoutInflater.inflate(R.layout.dialog_about,null)
             about.setView(customView)
-            about.setPositiveButton("Ok") { _, _ ->
-                Toast.makeText(this, "...\ud83c\udfb2...", Toast.LENGTH_SHORT).show()
+            var tapCount = 0
+            var diceRoll = 0
+            customView.appIconImage.setOnClickListener {
+                tapCount++
+                if (tapCount == 6){
+                    customView.performHapticFeedback(HapticFeedbackConstants.VIRTUAL_KEY)
+                    Toast.makeText(this, "Rolling...\uD83C\uDFB2...", Toast.LENGTH_SHORT).show()
+                    diceRoll = Random.nextInt(1,6)
+                }
             }
+            about.setPositiveButton("Ok") { _, _ ->
+                if(diceRoll > 0) {
+                    Toast.makeText(this, if (diceRoll < 3) "You Rolled $diceRoll XD\nBetter Luck Next Time"
+                    else if (diceRoll < 5) "You rolled $diceRoll!\nIt's Nothing just an Easter Egg XD"
+                    else "You rolled $diceRoll!!!\nYou have great luck, Have Fun XD", Toast.LENGTH_LONG).show()
+                }
+                tapCount = 0
+                diceRoll = 0
+            }
+            about.setCancelable(false)
             about.show()
         }
     }
