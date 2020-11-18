@@ -16,7 +16,9 @@
         android:clickable="true"
         android:hapticFeedbackEnabled="true"
         android:padding="8dp"
-        app:srcCompat="@drawable/ic_info" />
+        app:srcCompat="@drawable/ic_info"
+        android:focusable="true"
+        android:contentDescription="About" />
 
     <LinearLayout
         android:id="@+id/display"
@@ -30,29 +32,45 @@
         <TextView
             android:id="@+id/inputField"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="120sp"
             android:fontFamily="@font/comfortaa"
-            android:scrollHorizontally="false"
+            android:maxHeight="180sp"
+            android:overScrollMode="always"
+            android:scrollHorizontally="true"
             android:textAlignment="textEnd"
             android:textIsSelectable="true"
-            android:textSize="54sp" />
+            android:textSize="60sp"
+            app:autoSizeMaxTextSize="64sp"
+            app:autoSizeMinTextSize="32sp"
+            app:autoSizeTextType="uniform" />
 
         <TextView
             android:id="@+id/outputField"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="120sp"
             android:fontFamily="@font/comfortaa_bold"
             android:textAlignment="textEnd"
             android:textColor="#795B5B5B"
             android:textIsSelectable="false"
-            android:textSize="42sp" />
+            android:textSize="54sp"
+            app:autoSizeMaxTextSize="54sp"
+            app:autoSizeMinTextSize="28sp"
+            app:autoSizeTextType="uniform" />
     </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/dividerH"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/purple_500"
+        android:orientation="horizontal"></LinearLayout>
 
     <LinearLayout
         android:id="@+id/inputPad"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="0"
+        android:background="#F6F6F6"
         android:orientation="horizontal"
         android:paddingLeft="5dp"
         android:paddingRight="5dp">
@@ -239,9 +257,9 @@
         </LinearLayout>
 
         <LinearLayout
-            android:id="@+id/divider"
-            android:layout_width="0.75dp"
-            android:layout_height="333sp"
+            android:id="@+id/dividerV"
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
             android:layout_gravity="center"
             android:background="@color/purple_500"
             android:orientation="vertical"></LinearLayout>

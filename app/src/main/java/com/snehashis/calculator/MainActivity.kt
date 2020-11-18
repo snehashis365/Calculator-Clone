@@ -1,6 +1,6 @@
 package com.snehashis.calculator
 
-import android.content.DialogInterface
+import android.annotation.SuppressLint
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.Editable
@@ -125,14 +125,15 @@ class MainActivity : AppCompatActivity() {
             about.setTitle("About This App")
             val customView = layoutInflater.inflate(R.layout.dialog_about,null)
             about.setView(customView)
-            about.setPositiveButton("Ok", DialogInterface.OnClickListener { _, _ ->
+            about.setPositiveButton("Ok") { _, _ ->
                 Toast.makeText(this, "...\ud83c\udfb2...", Toast.LENGTH_SHORT).show()
-            })
+            }
             about.show()
         }
     }
     private fun isOperator(op: Char): Boolean = (op == '+' || op == '-' || op == '*' || op == '/' || op == '^' || op == '%')
 
+    @SuppressLint("SetTextI18n")
     private fun numPressed(num : Char) {
         if(inputField.text.toString() != "" || num == '.' || num == ')'){
             if(num == '.'&& isDecPressed )
