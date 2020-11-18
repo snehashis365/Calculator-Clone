@@ -289,6 +289,20 @@
                     android:textColor="@color/purple_500"
                     android:textSize="32sp" />
 
+                <TextView
+                    android:id="@+id/btn_aclr"
+                    android:layout_width="match_parent"
+                    android:layout_height="90sp"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:clickable="true"
+                    android:fontFamily="@font/comfortaa_light"
+                    android:gravity="center"
+                    android:hapticFeedbackEnabled="true"
+                    android:text="C"
+                    android:textColor="@color/purple_500"
+                    android:textSize="24sp"
+                    android:visibility="gone" />
+
                 <ImageView
                     android:id="@+id/btn_del"
                     android:layout_width="match_parent"
