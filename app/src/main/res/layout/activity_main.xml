@@ -70,15 +70,15 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="0"
-        android:background="#F6F6F6"
         android:orientation="horizontal"
         android:paddingLeft="5dp"
         android:paddingRight="5dp">
 
         <LinearLayout
             android:id="@+id/numPad"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_weight="2"
             android:orientation="vertical">
 
             <LinearLayout
@@ -89,8 +89,9 @@
 
                 <TextView
                     android:id="@+id/btn_7"
-                    android:layout_width="90sp"
+                    android:layout_width="0dp"
                     android:layout_height="90sp"
+                    android:layout_weight="1"
                     android:background="?attr/selectableItemBackgroundBorderless"
                     android:clickable="true"
                     android:fontFamily="@font/comfortaa_light"
@@ -101,8 +102,9 @@
 
                 <TextView
                     android:id="@+id/btn_8"
-                    android:layout_width="90sp"
+                    android:layout_width="0dp"
                     android:layout_height="90sp"
+                    android:layout_weight="1"
                     android:background="?attr/selectableItemBackgroundBorderless"
                     android:clickable="true"
                     android:fontFamily="@font/comfortaa_light"
@@ -113,8 +115,9 @@
 
                 <TextView
                     android:id="@+id/btn_9"
-                    android:layout_width="80sp"
+                    android:layout_width="0dp"
                     android:layout_height="90sp"
+                    android:layout_weight="1"
                     android:background="?attr/selectableItemBackgroundBorderless"
                     android:clickable="true"
                     android:fontFamily="@font/comfortaa_light"
@@ -132,8 +135,9 @@
 
                 <TextView
                     android:id="@+id/btn_4"
-                    android:layout_width="90sp"
+                    android:layout_width="0dp"
                     android:layout_height="90sp"
+                    android:layout_weight="1"
                     android:background="?attr/selectableItemBackgroundBorderless"
                     android:clickable="true"
                     android:fontFamily="@font/comfortaa_light"
@@ -144,8 +148,9 @@
 
                 <TextView
                     android:id="@+id/btn_5"
-                    android:layout_width="90sp"
+                    android:layout_width="0dp"
                     android:layout_height="90sp"
+                    android:layout_weight="1"
                     android:background="?attr/selectableItemBackgroundBorderless"
                     android:clickable="true"
                     android:fontFamily="@font/comfortaa_light"
@@ -156,8 +161,9 @@
 
                 <TextView
                     android:id="@+id/btn_6"
-                    android:layout_width="80sp"
+                    android:layout_width="0dp"
                     android:layout_height="90sp"
+                    android:layout_weight="1"
                     android:background="?attr/selectableItemBackgroundBorderless"
                     android:clickable="true"
                     android:fontFamily="@font/comfortaa_light"
@@ -175,8 +181,9 @@
 
                 <TextView
                     android:id="@+id/btn_1"
-                    android:layout_width="90sp"
+                    android:layout_width="0dp"
                     android:layout_height="90sp"
+                    android:layout_weight="1"
                     android:background="?attr/selectableItemBackgroundBorderless"
                     android:clickable="true"
                     android:fontFamily="@font/comfortaa_light"
@@ -187,8 +194,9 @@
 
                 <TextView
                     android:id="@+id/btn_2"
-                    android:layout_width="90sp"
+                    android:layout_width="0dp"
                     android:layout_height="90sp"
+                    android:layout_weight="1"
                     android:background="?attr/selectableItemBackgroundBorderless"
                     android:clickable="true"
                     android:fontFamily="@font/comfortaa_light"
@@ -199,8 +207,9 @@
 
                 <TextView
                     android:id="@+id/btn_3"
-                    android:layout_width="80sp"
+                    android:layout_width="0dp"
                     android:layout_height="90sp"
+                    android:layout_weight="1"
                     android:background="?attr/selectableItemBackgroundBorderless"
                     android:clickable="true"
                     android:fontFamily="@font/comfortaa_light"
@@ -218,8 +227,9 @@
 
                 <TextView
                     android:id="@+id/btn_0"
-                    android:layout_width="90sp"
+                    android:layout_width="0dp"
                     android:layout_height="90sp"
+                    android:layout_weight="1"
                     android:background="?attr/selectableItemBackgroundBorderless"
                     android:clickable="true"
                     android:fontFamily="@font/comfortaa_light"
@@ -230,8 +240,9 @@
 
                 <TextView
                     android:id="@+id/btn_dec"
-                    android:layout_width="90sp"
+                    android:layout_width="0dp"
                     android:layout_height="90sp"
+                    android:layout_weight="1"
                     android:background="?attr/selectableItemBackgroundBorderless"
                     android:clickable="true"
                     android:fontFamily="@font/comfortaa_light"
@@ -242,8 +253,9 @@
 
                 <TextView
                     android:id="@+id/btn_expo"
-                    android:layout_width="80sp"
+                    android:layout_width="0dp"
                     android:layout_height="90sp"
+                    android:layout_weight="1"
                     android:background="?attr/selectableItemBackgroundBorderless"
                     android:clickable="true"
                     android:fontFamily="@font/comfortaa_light"
@@ -266,8 +278,9 @@
 
         <LinearLayout
             android:id="@+id/actionPad"
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="match_parent"
+            android:layout_weight="1"
             android:orientation="vertical">
 
             <LinearLayout
@@ -278,8 +291,9 @@
 
                 <TextView
                     android:id="@+id/btn_div"
-                    android:layout_width="70sp"
+                    android:layout_width="0dp"
                     android:layout_height="90sp"
+                    android:layout_weight="1"
                     android:background="?attr/selectableItemBackgroundBorderless"
                     android:clickable="true"
                     android:fontFamily="@font/comfortaa_light"
@@ -291,8 +305,9 @@
 
                 <TextView
                     android:id="@+id/btn_aclr"
-                    android:layout_width="match_parent"
+                    android:layout_width="0dp"
                     android:layout_height="90sp"
+                    android:layout_weight="1"
                     android:background="?attr/selectableItemBackgroundBorderless"
                     android:clickable="true"
                     android:fontFamily="@font/comfortaa_light"
@@ -305,7 +320,7 @@
 
                 <ImageView
                     android:id="@+id/btn_del"
-                    android:layout_width="match_parent"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:layout_weight="1"
@@ -326,8 +341,9 @@
 
                 <TextView
                     android:id="@+id/btn_mul"
-                    android:layout_width="70sp"
+                    android:layout_width="0dp"
                     android:layout_height="90sp"
+                    android:layout_weight="1"
                     android:background="?attr/selectableItemBackgroundBorderless"
                     android:clickable="true"
                     android:fontFamily="@font/comfortaa_light"
@@ -339,8 +355,9 @@
 
                 <TextView
                     android:id="@+id/btn_lb"
-                    android:layout_width="match_parent"
+                    android:layout_width="0dp"
                     android:layout_height="90sp"
+                    android:layout_weight="1"
                     android:background="?attr/selectableItemBackgroundBorderless"
                     android:clickable="true"
                     android:fontFamily="@font/comfortaa_light"
@@ -360,8 +377,9 @@
 
                 <TextView
                     android:id="@+id/btn_sub"
-                    android:layout_width="70sp"
+                    android:layout_width="0dp"
                     android:layout_height="90sp"
+                    android:layout_weight="1"
                     android:background="?attr/selectableItemBackgroundBorderless"
                     android:clickable="true"
                     android:fontFamily="@font/comfortaa_light"
@@ -373,8 +391,9 @@
 
                 <TextView
                     android:id="@+id/btn_rb"
-                    android:layout_width="match_parent"
+                    android:layout_width="0dp"
                     android:layout_height="90sp"
+                    android:layout_weight="1"
                     android:background="?attr/selectableItemBackgroundBorderless"
                     android:clickable="true"
                     android:fontFamily="@font/comfortaa_light"
@@ -395,8 +414,9 @@
 
                 <TextView
                     android:id="@+id/btn_add"
-                    android:layout_width="70sp"
+                    android:layout_width="0dp"
                     android:layout_height="90sp"
+                    android:layout_weight="1"
                     android:background="?attr/selectableItemBackgroundBorderless"
                     android:clickable="true"
                     android:fontFamily="@font/comfortaa_light"
@@ -408,8 +428,9 @@
 
                 <TextView
                     android:id="@+id/btn_eq"
-                    android:layout_width="match_parent"
+                    android:layout_width="0dp"
                     android:layout_height="90sp"
+                    android:layout_weight="1"
                     android:background="?attr/selectableItemBackgroundBorderless"
                     android:clickable="true"
                     android:fontFamily="@font/comfortaa_light"
