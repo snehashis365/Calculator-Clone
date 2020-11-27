@@ -16,7 +16,6 @@ import kotlinx.android.synthetic.main.dialog_about.view.*
 import kotlin.random.Random
 
 var isDecPressed : Boolean = false
-var isEqPressed : Boolean = false
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -35,7 +34,8 @@ class MainActivity : AppCompatActivity() {
                 Log.d("inputField", inputField.text.toString())
                 if(inputField.text!=outputField.text){
                     try {
-                        outputField.text = Expressions().eval(inputField.text.toString()).toString()
+
+                        outputField.text = Expressions().eval(formatExpression(inputField.text.toString())).toString()
                     }
                     catch (e: Exception){
                         e.printStackTrace()
@@ -98,10 +98,7 @@ class MainActivity : AppCompatActivity() {
         }
         btn_eq.setOnClickListener {
             inputField.text = outputField.text
-            outputField.text = ""
-            isEqPressed = true
-            btn_aclr.visibility = View.VISIBLE
-            btn_del.visibility = View.GONE
+            toggleIpOp()
         }
         btn_del.setOnClickListener {
             if (inputField.text.length > 1 )
@@ -111,11 +108,9 @@ class MainActivity : AppCompatActivity() {
             }
         }
         btn_aclr.setOnClickListener {
-            isEqPressed = false
             inputField.text = ""
             outputField.text = ""
-            btn_aclr.visibility = View.GONE
-            btn_del.visibility = View.VISIBLE
+            toggleIpOp()
         }
         btn_del.setOnLongClickListener(View.OnLongClickListener {
             btn_aclr.performClick()
@@ -154,8 +149,40 @@ class MainActivity : AppCompatActivity() {
     }
     private fun isOperator(op: Char): Boolean = (op == '+' || op == '-' || op == '*' || op == '/' || op == '^' || op == '%')
 
+    private fun toggleIpOp() {
+        if(inputField.visibility == View.VISIBLE) {
+            outputField.setTextColor(inputField.textColors)
+            inputField.visibility = View.GONE
+            btn_aclr.visibility = View.VISIBLE
+            btn_del.visibility = View.GONE
+        }
+        else {
+            outputField.setTextColor(resources.getColor(R.color.outputColor, theme))
+            inputField.visibility = View.VISIBLE
+            btn_aclr.visibility = View.GONE
+            btn_del.visibility = View.VISIBLE
+        }
+    }
+
+    private fun formatExpression(exp : String) : String {
+        var i = 0
+        var newExp: String = ""
+        while (i < exp.length)
+        {
+            if(exp[i] == '(')
+                newExp = newExp + "*("
+            else if (exp[i] == ')' && i != exp.length - 1)
+                newExp = newExp + ")*"
+            else
+                newExp += exp[i]
+            i++
+        }
+        return newExp
+    }
+
     @SuppressLint("SetTextI18n")
     private fun numPressed(num : Char) {
+        if(inputField.visibility == View.GONE) toggleIpOp()
         if(inputField.text.toString() != "" || num == '.' || num == ')'){
             if(num == '.'&& isDecPressed )
                 return
