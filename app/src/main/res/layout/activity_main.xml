@@ -5,26 +5,51 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:animateLayoutChanges="true"
+    android:background="@color/displayColor"
     android:orientation="vertical"
+    android:forceDarkAllowed="false"
     tools:context=".MainActivity">
 
-    <ImageView
-        android:id="@+id/btn_info"
-        android:layout_width="wrap_content"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/topBar"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="?attr/selectableItemBackgroundBorderless"
-        android:clickable="true"
-        android:hapticFeedbackEnabled="true"
-        android:padding="8dp"
-        app:srcCompat="@drawable/ic_info"
-        android:focusable="true"
-        android:contentDescription="About" />
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/btn_info"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="?attr/selectableItemBackground"
+            android:clickable="true"
+            android:contentDescription="About"
+            android:focusable="true"
+            android:hapticFeedbackEnabled="true"
+            android:padding="12dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_info" />
+
+        <ImageView
+            android:id="@+id/btn_menu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="?attr/selectableItemBackground"
+            android:clickable="true"
+            android:contentDescription="Menu"
+            android:focusable="true"
+            android:hapticFeedbackEnabled="true"
+            android:padding="12dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_menu" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <LinearLayout
         android:id="@+id/display"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1"
+        android:layout_weight="4"
         android:animateLayoutChanges="true"
         android:orientation="vertical"
         android:padding="12dp">
@@ -33,25 +58,25 @@
             android:id="@+id/inputField"
             android:layout_width="match_parent"
             android:layout_height="120sp"
-            android:fontFamily="@font/comfortaa"
+            android:fontFamily="@font/quicksand_medium"
             android:maxHeight="180sp"
             android:overScrollMode="always"
             android:scrollHorizontally="true"
             android:textAlignment="textEnd"
+            android:textColor="@color/textColor"
             android:textIsSelectable="true"
             android:textSize="60sp"
             app:autoSizeMaxTextSize="64sp"
             app:autoSizeMinTextSize="32sp"
             app:autoSizeTextType="uniform"
-            tools:visibility="visible" />
+            tools:visibility="gone" />
 
         <TextView
             android:id="@+id/outputField"
             android:layout_width="match_parent"
             android:layout_height="120sp"
-            android:fontFamily="@font/comfortaa_bold"
+            android:fontFamily="@font/quicksand_medium"
             android:textAlignment="textEnd"
-            android:textColor="@color/outputColor"
             android:textIsSelectable="true"
             android:textSize="54sp"
             app:autoSizeMaxTextSize="54sp"
@@ -64,10 +89,11 @@
         android:id="@+id/cardView"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1"
+        android:layout_weight="5"
+        app:cardBackgroundColor="@color/cardColor"
         app:cardCornerRadius="4dp"
-        app:cardElevation="10dp"
-        app:cardMaxElevation="10dp">
+        app:cardElevation="20dp"
+        app:cardMaxElevation="20dp">
 
         <LinearLayout
             android:id="@+id/inputPad"
@@ -81,7 +107,7 @@
             <LinearLayout
                 android:id="@+id/numPad"
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_weight="2"
                 android:orientation="vertical">
 
@@ -100,11 +126,12 @@
                         android:background="?attr/selectableItemBackgroundBorderless"
                         android:clickable="true"
                         android:focusable="true"
-                        android:fontFamily="@font/comfortaa_light"
+                        android:fontFamily="@font/quicksand_medium"
                         android:gravity="center"
                         android:hapticFeedbackEnabled="true"
                         android:text="7"
-                        android:textSize="32sp" />
+                        android:textColor="@color/textColor"
+                        android:textSize="36sp" />
 
                     <TextView
                         android:id="@+id/btn_8"
@@ -114,11 +141,12 @@
                         android:background="?attr/selectableItemBackgroundBorderless"
                         android:clickable="true"
                         android:focusable="true"
-                        android:fontFamily="@font/comfortaa_light"
+                        android:fontFamily="@font/quicksand_medium"
                         android:gravity="center"
                         android:hapticFeedbackEnabled="true"
                         android:text="8"
-                        android:textSize="32sp" />
+                        android:textColor="@color/textColor"
+                        android:textSize="36sp" />
 
                     <TextView
                         android:id="@+id/btn_9"
@@ -128,11 +156,12 @@
                         android:background="?attr/selectableItemBackgroundBorderless"
                         android:clickable="true"
                         android:focusable="true"
-                        android:fontFamily="@font/comfortaa_light"
+                        android:fontFamily="@font/quicksand_medium"
                         android:gravity="center"
                         android:hapticFeedbackEnabled="true"
                         android:text="9"
-                        android:textSize="32sp" />
+                        android:textColor="@color/textColor"
+                        android:textSize="36sp" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -150,11 +179,12 @@
                         android:background="?attr/selectableItemBackgroundBorderless"
                         android:clickable="true"
                         android:focusable="true"
-                        android:fontFamily="@font/comfortaa_light"
+                        android:fontFamily="@font/quicksand_medium"
                         android:gravity="center"
                         android:hapticFeedbackEnabled="true"
                         android:text="4"
-                        android:textSize="32sp" />
+                        android:textColor="@color/textColor"
+                        android:textSize="36sp" />
 
                     <TextView
                         android:id="@+id/btn_5"
@@ -164,11 +194,12 @@
                         android:background="?attr/selectableItemBackgroundBorderless"
                         android:clickable="true"
                         android:focusable="true"
-                        android:fontFamily="@font/comfortaa_light"
+                        android:fontFamily="@font/quicksand_medium"
                         android:gravity="center"
                         android:hapticFeedbackEnabled="true"
                         android:text="5"
-                        android:textSize="32sp" />
+                        android:textColor="@color/textColor"
+                        android:textSize="36sp" />
 
                     <TextView
                         android:id="@+id/btn_6"
@@ -178,11 +209,12 @@
                         android:background="?attr/selectableItemBackgroundBorderless"
                         android:clickable="true"
                         android:focusable="true"
-                        android:fontFamily="@font/comfortaa_light"
+                        android:fontFamily="@font/quicksand_medium"
                         android:gravity="center"
                         android:hapticFeedbackEnabled="true"
                         android:text="6"
-                        android:textSize="32sp" />
+                        android:textColor="@color/textColor"
+                        android:textSize="36sp" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -200,11 +232,12 @@
                         android:background="?attr/selectableItemBackgroundBorderless"
                         android:clickable="true"
                         android:focusable="true"
-                        android:fontFamily="@font/comfortaa_light"
+                        android:fontFamily="@font/quicksand_medium"
                         android:gravity="center"
                         android:hapticFeedbackEnabled="true"
                         android:text="1"
-                        android:textSize="32sp" />
+                        android:textColor="@color/textColor"
+                        android:textSize="36sp" />
 
                     <TextView
                         android:id="@+id/btn_2"
@@ -214,11 +247,12 @@
                         android:background="?attr/selectableItemBackgroundBorderless"
                         android:clickable="true"
                         android:focusable="true"
-                        android:fontFamily="@font/comfortaa_light"
+                        android:fontFamily="@font/quicksand_medium"
                         android:gravity="center"
                         android:hapticFeedbackEnabled="true"
                         android:text="2"
-                        android:textSize="32sp" />
+                        android:textColor="@color/textColor"
+                        android:textSize="36sp" />
 
                     <TextView
                         android:id="@+id/btn_3"
@@ -228,11 +262,12 @@
                         android:background="?attr/selectableItemBackgroundBorderless"
                         android:clickable="true"
                         android:focusable="true"
-                        android:fontFamily="@font/comfortaa_light"
+                        android:fontFamily="@font/quicksand_medium"
                         android:gravity="center"
                         android:hapticFeedbackEnabled="true"
                         android:text="3"
-                        android:textSize="32sp" />
+                        android:textColor="@color/textColor"
+                        android:textSize="36sp" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -250,11 +285,12 @@
                         android:background="?attr/selectableItemBackgroundBorderless"
                         android:clickable="true"
                         android:focusable="true"
-                        android:fontFamily="@font/comfortaa_light"
+                        android:fontFamily="@font/quicksand_medium"
                         android:gravity="center"
                         android:hapticFeedbackEnabled="true"
                         android:text="0"
-                        android:textSize="32sp" />
+                        android:textColor="@color/textColor"
+                        android:textSize="36sp" />
 
                     <TextView
                         android:id="@+id/btn_dec"
@@ -264,10 +300,11 @@
                         android:background="?attr/selectableItemBackgroundBorderless"
                         android:clickable="true"
                         android:focusable="true"
-                        android:fontFamily="@font/comfortaa_light"
+                        android:fontFamily="@font/quicksand_medium"
                         android:gravity="center"
                         android:hapticFeedbackEnabled="true"
                         android:text="."
+                        android:textColor="@color/textColor"
                         android:textSize="32sp" />
 
                     <TextView
@@ -278,11 +315,11 @@
                         android:background="?attr/selectableItemBackgroundBorderless"
                         android:clickable="true"
                         android:focusable="true"
-                        android:fontFamily="@font/comfortaa_light"
+                        android:fontFamily="@font/quicksand"
                         android:gravity="center"
                         android:hapticFeedbackEnabled="true"
                         android:text="^"
-                        android:textColor="@color/purple_500"
+                        android:textColor="@color/blue_500"
                         android:textSize="28sp" />
                 </LinearLayout>
 
@@ -291,9 +328,9 @@
             <LinearLayout
                 android:id="@+id/dividerV"
                 android:layout_width="1dp"
-                android:layout_height="320sp"
+                android:layout_height="match_parent"
                 android:layout_gravity="center"
-                android:background="@color/purple_500"
+                android:background="@android:color/darker_gray"
                 android:orientation="vertical"></LinearLayout>
 
             <LinearLayout
@@ -318,12 +355,12 @@
                         android:background="?attr/selectableItemBackgroundBorderless"
                         android:clickable="true"
                         android:focusable="true"
-                        android:fontFamily="@font/comfortaa_light"
+                        android:fontFamily="@font/quicksand"
                         android:gravity="center"
                         android:hapticFeedbackEnabled="true"
                         android:text="÷"
-                        android:textColor="@color/purple_500"
-                        android:textSize="32sp" />
+                        android:textColor="@color/blue_500"
+                        android:textSize="36sp" />
 
                     <TextView
                         android:id="@+id/btn_aclr"
@@ -332,12 +369,12 @@
                         android:layout_weight="1"
                         android:background="?attr/selectableItemBackgroundBorderless"
                         android:clickable="true"
-                        android:fontFamily="@font/comfortaa_light"
+                        android:fontFamily="@font/quicksand_medium"
                         android:gravity="center"
                         android:hapticFeedbackEnabled="true"
                         android:text="C"
-                        android:textColor="@color/purple_500"
-                        android:textSize="24sp"
+                        android:textColor="@color/blue_500"
+                        android:textSize="30sp"
                         android:visibility="gone" />
 
                     <ImageView
@@ -350,8 +387,8 @@
                         android:clickable="true"
                         android:focusable="true"
                         android:hapticFeedbackEnabled="true"
-                        android:paddingTop="20sp"
-                        android:paddingBottom="20sp"
+                        android:paddingTop="8dp"
+                        android:paddingBottom="8dp"
                         app:srcCompat="@drawable/ic_backspace" />
                 </LinearLayout>
 
@@ -370,12 +407,12 @@
                         android:background="?attr/selectableItemBackgroundBorderless"
                         android:clickable="true"
                         android:focusable="true"
-                        android:fontFamily="@font/comfortaa_light"
+                        android:fontFamily="@font/quicksand"
                         android:gravity="center"
                         android:hapticFeedbackEnabled="true"
                         android:text="×"
-                        android:textColor="@color/purple_500"
-                        android:textSize="32sp" />
+                        android:textColor="@color/blue_500"
+                        android:textSize="36sp" />
 
                     <TextView
                         android:id="@+id/btn_lb"
@@ -385,11 +422,11 @@
                         android:background="?attr/selectableItemBackgroundBorderless"
                         android:clickable="true"
                         android:focusable="true"
-                        android:fontFamily="@font/comfortaa_light"
+                        android:fontFamily="@font/quicksand"
                         android:gravity="center"
                         android:hapticFeedbackEnabled="true"
                         android:text="("
-                        android:textColor="@color/purple_500"
+                        android:textColor="@color/blue_500"
                         android:textSize="28sp" />
                 </LinearLayout>
 
@@ -408,12 +445,12 @@
                         android:background="?attr/selectableItemBackgroundBorderless"
                         android:clickable="true"
                         android:focusable="true"
-                        android:fontFamily="@font/comfortaa_light"
+                        android:fontFamily="@font/quicksand"
                         android:gravity="center"
                         android:hapticFeedbackEnabled="true"
                         android:text="-"
-                        android:textColor="@color/purple_500"
-                        android:textSize="32sp" />
+                        android:textColor="@color/blue_500"
+                        android:textSize="36sp" />
 
                     <TextView
                         android:id="@+id/btn_rb"
@@ -423,11 +460,11 @@
                         android:background="?attr/selectableItemBackgroundBorderless"
                         android:clickable="true"
                         android:focusable="true"
-                        android:fontFamily="@font/comfortaa_light"
+                        android:fontFamily="@font/quicksand"
                         android:gravity="center"
                         android:hapticFeedbackEnabled="true"
                         android:text=")"
-                        android:textColor="@color/purple_500"
+                        android:textColor="@color/blue_500"
                         android:textSize="28sp" />
 
                 </LinearLayout>
@@ -447,12 +484,12 @@
                         android:background="?attr/selectableItemBackgroundBorderless"
                         android:clickable="true"
                         android:focusable="true"
-                        android:fontFamily="@font/comfortaa_light"
+                        android:fontFamily="@font/quicksand"
                         android:gravity="center"
                         android:hapticFeedbackEnabled="true"
                         android:text="+"
-                        android:textColor="@color/purple_500"
-                        android:textSize="32sp" />
+                        android:textColor="@color/blue_500"
+                        android:textSize="36sp" />
 
                     <TextView
                         android:id="@+id/btn_eq"
@@ -462,12 +499,12 @@
                         android:background="?attr/selectableItemBackgroundBorderless"
                         android:clickable="true"
                         android:focusable="true"
-                        android:fontFamily="@font/comfortaa_light"
+                        android:fontFamily="@font/quicksand"
                         android:gravity="center"
                         android:hapticFeedbackEnabled="true"
                         android:text="="
-                        android:textColor="@color/purple_500"
-                        android:textSize="32sp" />
+                        android:textColor="@color/blue_500"
+                        android:textSize="36sp" />
                 </LinearLayout>
             </LinearLayout>
 

@@ -7,7 +7,7 @@
     <color name="darkBlue_700">#303F9F</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-    <color name="cardColor">#FFFFFF</color>
-    <color name="textColor">#FF000000</color>
-    <color name="displayColor">#EFEFEF</color>
+    <color name="cardColor">#212121</color>
+    <color name="textColor">#FFFFFFFF</color>
+    <color name="displayColor">#0C0C0C</color>
 </resources>

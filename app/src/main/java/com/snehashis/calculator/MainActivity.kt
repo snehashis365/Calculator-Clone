@@ -1,6 +1,7 @@
 package com.snehashis.calculator
 
 import android.annotation.SuppressLint
+import android.content.res.ColorStateList
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.Editable
@@ -8,19 +9,30 @@ import android.text.TextWatcher
 import android.util.Log
 import android.view.HapticFeedbackConstants
 import android.view.View
+import android.widget.PopupMenu
 import android.widget.Toast
-import androidx.appcompat.app.AlertDialog
+import androidx.appcompat.app.AppCompatDelegate
 import com.github.keelar.exprk.Expressions
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.dialog_about.view.*
+import kotlinx.android.synthetic.main.diaolog_theme.view.*
 import kotlin.random.Random
 
 var isDecPressed : Boolean = false
+lateinit var defColour : ColorStateList
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        defColour = outputField.textColors
+        val sharedPreferences = getSharedPreferences("sharedPreferences", MODE_PRIVATE)
+        val editor = sharedPreferences.edit()
+        var themeState = sharedPreferences.getInt("themeState", AppCompatDelegate.getDefaultNightMode())
+        AppCompatDelegate.setDefaultNightMode(themeState)
+
         inputField.addTextChangedListener(object : TextWatcher {
             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
                 //TODO("Not needed yet")
@@ -38,7 +50,7 @@ class MainActivity : AppCompatActivity() {
                         outputField.text = Expressions().eval(formatExpression(inputField.text.toString())).toString()
                     }
                     catch (e: Exception){
-                        e.printStackTrace()
+                        //e.printStackTrace()
                         outputField.text = e.message
                     }
 
@@ -85,10 +97,10 @@ class MainActivity : AppCompatActivity() {
             numPressed('-')
         }
         btn_mul.setOnClickListener {
-            numPressed('*')
+            numPressed('×')
         }
         btn_div.setOnClickListener {
-            numPressed('/')
+            numPressed('÷')
         }
         btn_lb.setOnClickListener {
             numPressed('(')
@@ -97,19 +109,25 @@ class MainActivity : AppCompatActivity() {
             numPressed(')')
         }
         btn_eq.setOnClickListener {
-            inputField.text = outputField.text
-            toggleIpOp()
+            if(inputField.text.isNotEmpty() || inputField.text.isNotBlank()) {
+                inputField.text = outputField.text
+                toggleIpOp()
+            }
         }
         btn_del.setOnClickListener {
-            if (inputField.text.length > 1 )
+            if (inputField.text.length > 1 ) {
+                if (inputField.text.toString()[inputField.text.toString().length - 1] == '.') isDecPressed = false
                 inputField.text = inputField.text.toString().substring(0, inputField.text.toString().length - 1)
+            }
             else {
-                btn_aclr.performClick()
+                inputField.text = ""
+                outputField.text = ""
             }
         }
         btn_aclr.setOnClickListener {
             inputField.text = ""
             outputField.text = ""
+            isDecPressed = false
             toggleIpOp()
         }
         btn_del.setOnLongClickListener(View.OnLongClickListener {
@@ -120,7 +138,7 @@ class MainActivity : AppCompatActivity() {
             numPressed('^')
         }
         btn_info.setOnClickListener {
-            val about = AlertDialog.Builder(this)
+            val about = MaterialAlertDialogBuilder(this)
             about.setTitle("About This App")
             val customView = layoutInflater.inflate(R.layout.dialog_about,null)
             about.setView(customView)
@@ -146,8 +164,46 @@ class MainActivity : AppCompatActivity() {
             about.setCancelable(false)
             about.show()
         }
+
+        btn_menu.setOnClickListener {
+            val popupMenu = PopupMenu(this, it)
+            popupMenu.inflate(R.menu.popup_menu)
+            popupMenu.setOnMenuItemClickListener { item->
+                when (item.itemId) {
+                    R.id.btn_theme -> {
+                        val themeDialog = MaterialAlertDialogBuilder(this)
+                        themeDialog.setTitle("Choose a theme")
+                        val themeView = layoutInflater.inflate(R.layout.diaolog_theme, null)
+                        themeDialog.setView(themeView)
+                        themeView.themeGroup.check( when (themeState){
+                            AppCompatDelegate.MODE_NIGHT_NO -> R.id.theme_light
+                            AppCompatDelegate.MODE_NIGHT_YES -> R.id.theme_dark
+                            else -> R.id.theme_auto
+                        })
+                        themeDialog.setPositiveButton("Ok") { _, _ ->
+                            when (themeView.themeGroup.checkedRadioButtonId) {
+                                R.id.theme_light -> AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
+                                R.id.theme_dark -> AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
+                                R.id.theme_auto -> AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM)
+                            }
+                            editor.putInt("themeState", AppCompatDelegate.getDefaultNightMode())
+                            editor.apply()
+                        }
+                        themeDialog.setNegativeButton("Cancel") {_, _ ->
+                            //TODO
+                        }
+                        themeDialog.setCancelable(false)
+                        themeDialog.show()
+                    }
+                    R.id.btn_about ->
+                        btn_info.performClick()
+                }
+                true
+            }
+            popupMenu.show()
+        }
     }
-    private fun isOperator(op: Char): Boolean = (op == '+' || op == '-' || op == '*' || op == '/' || op == '^' || op == '%')
+    private fun isOperator(op: Char): Boolean = (op == '+' || op == '-' || op =='*' || op == '×' || op == '/' || op == '÷' || op == '^' || op == '%')
 
     private fun toggleIpOp() {
         if(inputField.visibility == View.VISIBLE) {
@@ -157,7 +213,7 @@ class MainActivity : AppCompatActivity() {
             btn_del.visibility = View.GONE
         }
         else {
-            outputField.setTextColor(resources.getColor(R.color.outputColor, theme))
+            outputField.setTextColor(defColour)
             inputField.visibility = View.VISIBLE
             btn_aclr.visibility = View.GONE
             btn_del.visibility = View.VISIBLE
@@ -169,14 +225,21 @@ class MainActivity : AppCompatActivity() {
         var newExp: String = ""
         while (i < exp.length)
         {
-            if(exp[i] == '(')
-                newExp = newExp + "*("
-            else if (exp[i] == ')' && i != exp.length - 1)
-                newExp = newExp + ")*"
-            else
-                newExp += exp[i]
+            when(exp[i]){
+                '(' ->
+                    if (i > 0 && newExp[newExp.length-1] != '(' && !isOperator(newExp[newExp.length-1])) newExp += "*(" else newExp += '('
+                ')' -> newExp += ')'
+                '^' -> newExp += '^'
+                '×' -> newExp += '*'
+                '÷' -> newExp += '/'
+                '+' -> newExp += '+'
+                '-' -> newExp += '-'
+                else -> if (i > 0 && newExp[newExp.length - 1] == ')') newExp += "*" + exp[i] else newExp += exp[i]
+            }
             i++
+            Log.d("Formatted",newExp)
         }
+
         return newExp
     }
 
@@ -184,11 +247,11 @@ class MainActivity : AppCompatActivity() {
     private fun numPressed(num : Char) {
         if(inputField.visibility == View.GONE) toggleIpOp()
         if(inputField.text.toString() != "" || num == '.' || num == ')'){
-            if(num == '.'&& isDecPressed )
+            if(num == '.' && isDecPressed )
                 return
             else if(num == '.')
                 isDecPressed = true
-            else if (isOperator(num))
+            else if (isOperator(num) || num == ')' || num == '(')
                 isDecPressed = false
 
             inputField.text = inputField.text.toString() + num
