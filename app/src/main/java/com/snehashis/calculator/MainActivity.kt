@@ -30,7 +30,7 @@ class MainActivity : AppCompatActivity() {
         defColour = outputField.textColors
         val sharedPreferences = getSharedPreferences("sharedPreferences", MODE_PRIVATE)
         val editor = sharedPreferences.edit()
-        var themeState = sharedPreferences.getInt("themeState", AppCompatDelegate.getDefaultNightMode())
+        val themeState = sharedPreferences.getInt("themeState", AppCompatDelegate.getDefaultNightMode())
         AppCompatDelegate.setDefaultNightMode(themeState)
 
         inputField.addTextChangedListener(object : TextWatcher {
@@ -58,63 +58,65 @@ class MainActivity : AppCompatActivity() {
             }
         })
         btn_1.setOnClickListener {
-            numPressed('1')
+           numPressed(it, '1')
         }
         btn_2.setOnClickListener {
-            numPressed('2')
+           numPressed(it, '2')
         }
         btn_3.setOnClickListener {
-            numPressed('3')
+           numPressed(it, '3')
         }
         btn_4.setOnClickListener {
-            numPressed('4')
+           numPressed(it, '4')
         }
         btn_5.setOnClickListener {
-            numPressed('5')
+           numPressed(it, '5')
         }
         btn_6.setOnClickListener {
-            numPressed('6')
+           numPressed(it, '6')
         }
         btn_7.setOnClickListener {
-            numPressed('7')
+           numPressed(it, '7')
         }
         btn_8.setOnClickListener {
-            numPressed('8')
+           numPressed(it, '8')
         }
         btn_9.setOnClickListener {
-            numPressed('9')
+           numPressed(it, '9')
         }
         btn_0.setOnClickListener {
-            numPressed('0')
+           numPressed(it, '0')
         }
         btn_dec.setOnClickListener {
-            numPressed('.')
+           numPressed(it, '.')
         }
         btn_add.setOnClickListener {
-            numPressed('+')
+           numPressed(it, '+')
         }
         btn_sub.setOnClickListener {
-            numPressed('-')
+           numPressed(it, '-')
         }
         btn_mul.setOnClickListener {
-            numPressed('×')
+           numPressed(it, '×')
         }
         btn_div.setOnClickListener {
-            numPressed('÷')
+           numPressed(it, '÷')
         }
         btn_lb.setOnClickListener {
-            numPressed('(')
+           numPressed(it, '(')
         }
         btn_rb.setOnClickListener {
-            numPressed(')')
+           numPressed(it, ')')
         }
         btn_eq.setOnClickListener {
+            it.rootView.performHapticFeedback(HapticFeedbackConstants.VIRTUAL_KEY)
             if(inputField.text.isNotEmpty() || inputField.text.isNotBlank()) {
                 inputField.text = outputField.text
                 toggleIpOp()
             }
         }
         btn_del.setOnClickListener {
+            it.rootView.performHapticFeedback(HapticFeedbackConstants.VIRTUAL_KEY)
             if (inputField.text.length > 1 ) {
                 if (inputField.text.toString()[inputField.text.toString().length - 1] == '.') isDecPressed = false
                 inputField.text = inputField.text.toString().substring(0, inputField.text.toString().length - 1)
@@ -122,9 +124,11 @@ class MainActivity : AppCompatActivity() {
             else {
                 inputField.text = ""
                 outputField.text = ""
+                isDecPressed = false
             }
         }
         btn_aclr.setOnClickListener {
+            it.rootView.performHapticFeedback(HapticFeedbackConstants.LONG_PRESS)
             inputField.text = ""
             outputField.text = ""
             isDecPressed = false
@@ -135,9 +139,10 @@ class MainActivity : AppCompatActivity() {
             return@OnLongClickListener true
         })
         btn_expo.setOnClickListener {
-            numPressed('^')
+           numPressed(it, '^')
         }
         btn_info.setOnClickListener {
+            it.rootView.performHapticFeedback(HapticFeedbackConstants.VIRTUAL_KEY)
             val about = MaterialAlertDialogBuilder(this)
             about.setTitle("About This App")
             val customView = layoutInflater.inflate(R.layout.dialog_about,null)
@@ -244,7 +249,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     @SuppressLint("SetTextI18n")
-    private fun numPressed(num : Char) {
+    private fun numPressed(view: View, num : Char) {
         if(inputField.visibility == View.GONE) toggleIpOp()
         if(inputField.text.toString() != "" || num == '.' || num == ')'){
             if(num == '.' && isDecPressed )
@@ -258,6 +263,7 @@ class MainActivity : AppCompatActivity() {
         }
         else
             inputField.text = num.toString()
+        view.rootView.performHapticFeedback(HapticFeedbackConstants.KEYBOARD_TAP)
     }
 
 }

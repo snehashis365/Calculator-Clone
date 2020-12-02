@@ -24,7 +24,7 @@
             android:clickable="true"
             android:contentDescription="About"
             android:focusable="true"
-            android:hapticFeedbackEnabled="true"
+            android:hapticFeedbackEnabled="false"
             android:padding="12dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
@@ -38,7 +38,7 @@
             android:clickable="true"
             android:contentDescription="Menu"
             android:focusable="true"
-            android:hapticFeedbackEnabled="true"
+            android:hapticFeedbackEnabled="false"
             android:padding="12dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
@@ -121,47 +121,59 @@
                     <TextView
                         android:id="@+id/btn_7"
                         android:layout_width="0dp"
-                        android:layout_height="90sp"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
                         android:layout_weight="1"
                         android:background="?attr/selectableItemBackgroundBorderless"
                         android:clickable="true"
                         android:focusable="true"
                         android:fontFamily="@font/quicksand_medium"
                         android:gravity="center"
-                        android:hapticFeedbackEnabled="true"
+                        android:hapticFeedbackEnabled="false"
                         android:text="7"
                         android:textColor="@color/textColor"
-                        android:textSize="36sp" />
+                        android:textSize="36sp"
+                        app:autoSizeMaxTextSize="36sp"
+                        app:autoSizeMinTextSize="28sp"
+                        app:autoSizeTextType="uniform" />
 
                     <TextView
                         android:id="@+id/btn_8"
                         android:layout_width="0dp"
-                        android:layout_height="90sp"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
                         android:layout_weight="1"
                         android:background="?attr/selectableItemBackgroundBorderless"
                         android:clickable="true"
                         android:focusable="true"
                         android:fontFamily="@font/quicksand_medium"
                         android:gravity="center"
-                        android:hapticFeedbackEnabled="true"
+                        android:hapticFeedbackEnabled="false"
                         android:text="8"
                         android:textColor="@color/textColor"
-                        android:textSize="36sp" />
+                        android:textSize="36sp"
+                        app:autoSizeMaxTextSize="36sp"
+                        app:autoSizeMinTextSize="28sp"
+                        app:autoSizeTextType="uniform" />
 
                     <TextView
                         android:id="@+id/btn_9"
                         android:layout_width="0dp"
-                        android:layout_height="90sp"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
                         android:layout_weight="1"
                         android:background="?attr/selectableItemBackgroundBorderless"
                         android:clickable="true"
                         android:focusable="true"
                         android:fontFamily="@font/quicksand_medium"
                         android:gravity="center"
-                        android:hapticFeedbackEnabled="true"
+                        android:hapticFeedbackEnabled="false"
                         android:text="9"
                         android:textColor="@color/textColor"
-                        android:textSize="36sp" />
+                        android:textSize="36sp"
+                        app:autoSizeMaxTextSize="36sp"
+                        app:autoSizeMinTextSize="28sp"
+                        app:autoSizeTextType="uniform" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -174,47 +186,59 @@
                     <TextView
                         android:id="@+id/btn_4"
                         android:layout_width="0dp"
-                        android:layout_height="90sp"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
                         android:layout_weight="1"
                         android:background="?attr/selectableItemBackgroundBorderless"
                         android:clickable="true"
                         android:focusable="true"
                         android:fontFamily="@font/quicksand_medium"
                         android:gravity="center"
-                        android:hapticFeedbackEnabled="true"
+                        android:hapticFeedbackEnabled="false"
                         android:text="4"
                         android:textColor="@color/textColor"
-                        android:textSize="36sp" />
+                        android:textSize="36sp"
+                        app:autoSizeMaxTextSize="36sp"
+                        app:autoSizeMinTextSize="28sp"
+                        app:autoSizeTextType="uniform" />
 
                     <TextView
                         android:id="@+id/btn_5"
                         android:layout_width="0dp"
-                        android:layout_height="90sp"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
                         android:layout_weight="1"
                         android:background="?attr/selectableItemBackgroundBorderless"
                         android:clickable="true"
                         android:focusable="true"
                         android:fontFamily="@font/quicksand_medium"
                         android:gravity="center"
-                        android:hapticFeedbackEnabled="true"
+                        android:hapticFeedbackEnabled="false"
                         android:text="5"
                         android:textColor="@color/textColor"
-                        android:textSize="36sp" />
+                        android:textSize="36sp"
+                        app:autoSizeMaxTextSize="36sp"
+                        app:autoSizeMinTextSize="28sp"
+                        app:autoSizeTextType="uniform" />
 
                     <TextView
                         android:id="@+id/btn_6"
                         android:layout_width="0dp"
-                        android:layout_height="90sp"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
                         android:layout_weight="1"
                         android:background="?attr/selectableItemBackgroundBorderless"
                         android:clickable="true"
                         android:focusable="true"
                         android:fontFamily="@font/quicksand_medium"
                         android:gravity="center"
-                        android:hapticFeedbackEnabled="true"
+                        android:hapticFeedbackEnabled="false"
                         android:text="6"
                         android:textColor="@color/textColor"
-                        android:textSize="36sp" />
+                        android:textSize="36sp"
+                        app:autoSizeMaxTextSize="36sp"
+                        app:autoSizeMinTextSize="28sp"
+                        app:autoSizeTextType="uniform" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -227,47 +251,59 @@
                     <TextView
                         android:id="@+id/btn_1"
                         android:layout_width="0dp"
-                        android:layout_height="90sp"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
                         android:layout_weight="1"
                         android:background="?attr/selectableItemBackgroundBorderless"
                         android:clickable="true"
                         android:focusable="true"
                         android:fontFamily="@font/quicksand_medium"
                         android:gravity="center"
-                        android:hapticFeedbackEnabled="true"
+                        android:hapticFeedbackEnabled="false"
                         android:text="1"
                         android:textColor="@color/textColor"
-                        android:textSize="36sp" />
+                        android:textSize="36sp"
+                        app:autoSizeMaxTextSize="36sp"
+                        app:autoSizeMinTextSize="28sp"
+                        app:autoSizeTextType="uniform" />
 
                     <TextView
                         android:id="@+id/btn_2"
                         android:layout_width="0dp"
-                        android:layout_height="90sp"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
                         android:layout_weight="1"
                         android:background="?attr/selectableItemBackgroundBorderless"
                         android:clickable="true"
                         android:focusable="true"
                         android:fontFamily="@font/quicksand_medium"
                         android:gravity="center"
-                        android:hapticFeedbackEnabled="true"
+                        android:hapticFeedbackEnabled="false"
                         android:text="2"
                         android:textColor="@color/textColor"
-                        android:textSize="36sp" />
+                        android:textSize="36sp"
+                        app:autoSizeMaxTextSize="36sp"
+                        app:autoSizeMinTextSize="28sp"
+                        app:autoSizeTextType="uniform" />
 
                     <TextView
                         android:id="@+id/btn_3"
                         android:layout_width="0dp"
-                        android:layout_height="90sp"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
                         android:layout_weight="1"
                         android:background="?attr/selectableItemBackgroundBorderless"
                         android:clickable="true"
                         android:focusable="true"
                         android:fontFamily="@font/quicksand_medium"
                         android:gravity="center"
-                        android:hapticFeedbackEnabled="true"
+                        android:hapticFeedbackEnabled="false"
                         android:text="3"
                         android:textColor="@color/textColor"
-                        android:textSize="36sp" />
+                        android:textSize="36sp"
+                        app:autoSizeMaxTextSize="36sp"
+                        app:autoSizeMinTextSize="28sp"
+                        app:autoSizeTextType="uniform" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -280,47 +316,59 @@
                     <TextView
                         android:id="@+id/btn_0"
                         android:layout_width="0dp"
-                        android:layout_height="90sp"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
                         android:layout_weight="1"
                         android:background="?attr/selectableItemBackgroundBorderless"
                         android:clickable="true"
                         android:focusable="true"
                         android:fontFamily="@font/quicksand_medium"
                         android:gravity="center"
-                        android:hapticFeedbackEnabled="true"
+                        android:hapticFeedbackEnabled="false"
                         android:text="0"
                         android:textColor="@color/textColor"
-                        android:textSize="36sp" />
+                        android:textSize="36sp"
+                        app:autoSizeMaxTextSize="36sp"
+                        app:autoSizeMinTextSize="28sp"
+                        app:autoSizeTextType="uniform" />
 
                     <TextView
                         android:id="@+id/btn_dec"
                         android:layout_width="0dp"
-                        android:layout_height="90sp"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
                         android:layout_weight="1"
                         android:background="?attr/selectableItemBackgroundBorderless"
                         android:clickable="true"
                         android:focusable="true"
                         android:fontFamily="@font/quicksand_medium"
                         android:gravity="center"
-                        android:hapticFeedbackEnabled="true"
+                        android:hapticFeedbackEnabled="false"
                         android:text="."
                         android:textColor="@color/textColor"
-                        android:textSize="32sp" />
+                        android:textSize="36sp"
+                        app:autoSizeMaxTextSize="36sp"
+                        app:autoSizeMinTextSize="28sp"
+                        app:autoSizeTextType="uniform" />
 
                     <TextView
                         android:id="@+id/btn_expo"
                         android:layout_width="0dp"
-                        android:layout_height="90sp"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
                         android:layout_weight="1"
                         android:background="?attr/selectableItemBackgroundBorderless"
                         android:clickable="true"
                         android:focusable="true"
                         android:fontFamily="@font/quicksand"
                         android:gravity="center"
-                        android:hapticFeedbackEnabled="true"
+                        android:hapticFeedbackEnabled="false"
                         android:text="^"
                         android:textColor="@color/blue_500"
-                        android:textSize="28sp" />
+                        android:textSize="28sp"
+                        app:autoSizeMaxTextSize="28sp"
+                        app:autoSizeMinTextSize="22sp"
+                        app:autoSizeTextType="uniform" />
                 </LinearLayout>
 
             </LinearLayout>
@@ -350,32 +398,40 @@
                     <TextView
                         android:id="@+id/btn_div"
                         android:layout_width="0dp"
-                        android:layout_height="90sp"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
                         android:layout_weight="1"
                         android:background="?attr/selectableItemBackgroundBorderless"
                         android:clickable="true"
                         android:focusable="true"
                         android:fontFamily="@font/quicksand"
                         android:gravity="center"
-                        android:hapticFeedbackEnabled="true"
+                        android:hapticFeedbackEnabled="false"
                         android:text="÷"
                         android:textColor="@color/blue_500"
-                        android:textSize="36sp" />
+                        android:textSize="36sp"
+                        app:autoSizeMaxTextSize="36sp"
+                        app:autoSizeMinTextSize="28sp"
+                        app:autoSizeTextType="uniform" />
 
                     <TextView
                         android:id="@+id/btn_aclr"
                         android:layout_width="0dp"
-                        android:layout_height="90sp"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
                         android:layout_weight="1"
                         android:background="?attr/selectableItemBackgroundBorderless"
                         android:clickable="true"
                         android:fontFamily="@font/quicksand_medium"
                         android:gravity="center"
-                        android:hapticFeedbackEnabled="true"
+                        android:hapticFeedbackEnabled="false"
                         android:text="C"
                         android:textColor="@color/blue_500"
                         android:textSize="30sp"
-                        android:visibility="gone" />
+                        android:visibility="gone"
+                        app:autoSizeMaxTextSize="30sp"
+                        app:autoSizeMinTextSize="24sp"
+                        app:autoSizeTextType="uniform" />
 
                     <ImageView
                         android:id="@+id/btn_del"
@@ -385,8 +441,9 @@
                         android:layout_weight="1"
                         android:background="?attr/selectableItemBackgroundBorderless"
                         android:clickable="true"
+                        android:cropToPadding="false"
                         android:focusable="true"
-                        android:hapticFeedbackEnabled="true"
+                        android:hapticFeedbackEnabled="false"
                         android:paddingTop="8dp"
                         android:paddingBottom="8dp"
                         app:srcCompat="@drawable/ic_backspace" />
@@ -402,32 +459,40 @@
                     <TextView
                         android:id="@+id/btn_mul"
                         android:layout_width="0dp"
-                        android:layout_height="90sp"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
                         android:layout_weight="1"
                         android:background="?attr/selectableItemBackgroundBorderless"
                         android:clickable="true"
                         android:focusable="true"
                         android:fontFamily="@font/quicksand"
                         android:gravity="center"
-                        android:hapticFeedbackEnabled="true"
+                        android:hapticFeedbackEnabled="false"
                         android:text="×"
                         android:textColor="@color/blue_500"
-                        android:textSize="36sp" />
+                        android:textSize="36sp"
+                        app:autoSizeMaxTextSize="36sp"
+                        app:autoSizeMinTextSize="28sp"
+                        app:autoSizeTextType="uniform" />
 
                     <TextView
                         android:id="@+id/btn_lb"
                         android:layout_width="0dp"
-                        android:layout_height="90sp"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
                         android:layout_weight="1"
                         android:background="?attr/selectableItemBackgroundBorderless"
                         android:clickable="true"
                         android:focusable="true"
                         android:fontFamily="@font/quicksand"
                         android:gravity="center"
-                        android:hapticFeedbackEnabled="true"
+                        android:hapticFeedbackEnabled="false"
                         android:text="("
                         android:textColor="@color/blue_500"
-                        android:textSize="28sp" />
+                        android:textSize="28sp"
+                        app:autoSizeMaxTextSize="28sp"
+                        app:autoSizeMinTextSize="22sp"
+                        app:autoSizeTextType="uniform" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -440,32 +505,40 @@
                     <TextView
                         android:id="@+id/btn_sub"
                         android:layout_width="0dp"
-                        android:layout_height="90sp"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
                         android:layout_weight="1"
                         android:background="?attr/selectableItemBackgroundBorderless"
                         android:clickable="true"
                         android:focusable="true"
                         android:fontFamily="@font/quicksand"
                         android:gravity="center"
-                        android:hapticFeedbackEnabled="true"
+                        android:hapticFeedbackEnabled="false"
                         android:text="-"
                         android:textColor="@color/blue_500"
-                        android:textSize="36sp" />
+                        android:textSize="36sp"
+                        app:autoSizeMaxTextSize="36sp"
+                        app:autoSizeMinTextSize="28sp"
+                        app:autoSizeTextType="uniform" />
 
                     <TextView
                         android:id="@+id/btn_rb"
                         android:layout_width="0dp"
-                        android:layout_height="90sp"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
                         android:layout_weight="1"
                         android:background="?attr/selectableItemBackgroundBorderless"
                         android:clickable="true"
                         android:focusable="true"
                         android:fontFamily="@font/quicksand"
                         android:gravity="center"
-                        android:hapticFeedbackEnabled="true"
+                        android:hapticFeedbackEnabled="false"
                         android:text=")"
                         android:textColor="@color/blue_500"
-                        android:textSize="28sp" />
+                        android:textSize="28sp"
+                        app:autoSizeMaxTextSize="28sp"
+                        app:autoSizeMinTextSize="22sp"
+                        app:autoSizeTextType="uniform" />
 
                 </LinearLayout>
 
@@ -479,32 +552,40 @@
                     <TextView
                         android:id="@+id/btn_add"
                         android:layout_width="0dp"
-                        android:layout_height="90sp"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
                         android:layout_weight="1"
                         android:background="?attr/selectableItemBackgroundBorderless"
                         android:clickable="true"
                         android:focusable="true"
                         android:fontFamily="@font/quicksand"
                         android:gravity="center"
-                        android:hapticFeedbackEnabled="true"
+                        android:hapticFeedbackEnabled="false"
                         android:text="+"
                         android:textColor="@color/blue_500"
-                        android:textSize="36sp" />
+                        android:textSize="36sp"
+                        app:autoSizeMaxTextSize="36sp"
+                        app:autoSizeMinTextSize="28sp"
+                        app:autoSizeTextType="uniform" />
 
                     <TextView
                         android:id="@+id/btn_eq"
                         android:layout_width="0dp"
-                        android:layout_height="90sp"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
                         android:layout_weight="1"
                         android:background="?attr/selectableItemBackgroundBorderless"
                         android:clickable="true"
                         android:focusable="true"
                         android:fontFamily="@font/quicksand"
                         android:gravity="center"
-                        android:hapticFeedbackEnabled="true"
+                        android:hapticFeedbackEnabled="false"
                         android:text="="
                         android:textColor="@color/blue_500"
-                        android:textSize="36sp" />
+                        android:textSize="36sp"
+                        app:autoSizeMaxTextSize="36sp"
+                        app:autoSizeMinTextSize="28sp"
+                        app:autoSizeTextType="uniform" />
                 </LinearLayout>
             </LinearLayout>
 
